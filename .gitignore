@@ -6,3 +6,5 @@ pxt_modules
 *.db
 *.tgz
 .header.json
+.idea
+.pxt
