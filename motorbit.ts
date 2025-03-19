@@ -158,6 +158,12 @@ namespace motorbit {
         return servo;
     }
 
+    //% blockId="get_motor" block="motor %motor"
+    //% motor.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    export function getMotor(motor: Motors) {
+        return motor;
+    }
+
     /**
      * Servo Execute
      * @param index number Servo Channel; eg: S1
@@ -399,7 +405,8 @@ namespace motorbit {
 
     //% blockId=motorbit_stop block="Motor Stop|%index|"
     //% group="Motor" weight=82
-    export function MotorStop(index: Motors): void {
+    //% index.shadow=get_motor
+    export function MotorStop(index: number): void {
         MotorRun(index, 0);
     }
 
@@ -407,7 +414,8 @@ namespace motorbit {
     //% group="Motor" weight=86
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function MotorRun(index: Motors, speed: number): void {
+    //% index.shadow=get_motor
+    export function MotorRun(index: number, speed: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -433,7 +441,7 @@ namespace motorbit {
 
     /**
      * Execute single motors with delay
-     * @param index Motor Index; eg: A01A02, B01B02, A03A04, B03B04
+     * @param index number Motor Index; eg: A01A02, B01B02, A03A04, B03B04
      * @param speed number [-255-255] speed of motor; eg: 150, -150
      * @param delay number second delay to stop; eg: 1
      */
@@ -441,7 +449,8 @@ namespace motorbit {
     //% group="Motor" weight=85
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
+    //% index.shadow=get_motor
+    export function MotorRunDelay(index: number, speed: number, delay: number): void {
         MotorRun(index, speed);
         basic.pause(delay * 1000);
         MotorRun(index, 0);
@@ -449,9 +458,9 @@ namespace motorbit {
 
     /**
      * Execute two motors at the same time
-     * @param motor1 First Motor; eg: A01A02, B01B02
+     * @param motor1 number First Motor; eg: A01A02, B01B02
      * @param speed1 number [-255-255] speed of motor; eg: 150, -150
-     * @param motor2 Second Motor; eg: A03A04, B03B04
+     * @param motor2 number Second Motor; eg: A03A04, B03B04
      * @param speed2 number [-255-255] speed of motor; eg: 150, -150
      */
     //% blockId=motorbit_motor_dual block="Motor|%motor1|speed %speed1|%motor2|speed %speed2"
@@ -460,16 +469,18 @@ namespace motorbit {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
+    //% motor1.shadow=get_motor
+    //% motor2.shadow=get_motor
+    export function MotorRunDual(motor1: number, speed1: number, motor2: number, speed2: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
     }
 
     /**
      * Execute two motors at the same time
-     * @param motor1 First Motor; eg: A01A02, B01B02
+     * @param motor1 number First Motor; eg: A01A02, B01B02
      * @param speed1 number [-255-255] speed of motor; eg: 150, -150
-     * @param motor2 Second Motor; eg: A03A04, B03B04
+     * @param motor2 number Second Motor; eg: A03A04, B03B04
      * @param speed2 number [-255-255] speed of motor; eg: 150, -150
      */
     //% blockId=motorbit_motor_dualDelay block="Motor|%motor1|speed %speed1|%motor2|speed %speed2|delay %delay|s "
@@ -478,7 +489,9 @@ namespace motorbit {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function MotorRunDualDelay(motor1: Motors, speed1: number, motor2: Motors, speed2: number, delay: number): void {
+    //% motor1.shadow=get_motor
+    //% motor2.shadow=get_motor
+    export function MotorRunDualDelay(motor1: number, speed1: number, motor2: number, speed2: number, delay: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
         basic.pause(delay * 1000);
