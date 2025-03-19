@@ -164,6 +164,18 @@ namespace motorbit {
         return motor;
     }
 
+    //% blockId="get_stepper" block="stepper %stepper"
+    //% stepper.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    export function getStepper(stepper: Steppers) {
+        return stepper;
+    }
+
+    //% blockId="get_turn" block="turn %turn"
+    //% turn.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    export function getTurn(turn: Turns) {
+        return turn;
+    }
+
     /**
      * Servo Execute
      * @param index number Servo Channel; eg: S1
@@ -310,7 +322,8 @@ namespace motorbit {
 
     //% blockId=motorbit_stepper_degree block="Stepper 28BYJ-48|%index|degree %degree"
     //% group="Stepper Motor" weight=91
-    export function StepperDegree(index: Steppers, degree: number): void {
+    //% index.shadow=get_stepper
+    export function StepperDegree(index: number, degree: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -322,7 +335,9 @@ namespace motorbit {
 
     //% blockId=motorbit_stepper_turn block="Stepper 28BYJ-48|%index|turn %turn"
     //% group="Stepper Motor" weight=90
-    export function StepperTurn(index: Steppers, turn: Turns): void {
+    //% index.shadow=get_stepper
+    //% turn.shadow=get_turn
+    export function StepperTurn(index: number, turn: number): void {
         let degree = turn;
         StepperDegree(index, degree);
     }
