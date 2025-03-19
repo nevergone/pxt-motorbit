@@ -1,8 +1,4 @@
 {
-  "Offset.FOUR|block": "four",
-  "Offset.ONE|block": "one",
-  "Offset.THREE|block": "three",
-  "Offset.TWO|block": "two",
   "motorbit.EM_GeekServo2KG|block": "GeekServo2KG|%index|degree %degree",
   "motorbit.EM_GeekServo5KG_Motor|block": "GeekServo5KG_MotorEN|%index|speed %speed",
   "motorbit.EM_GeekServo5KG|block": "GeekServo5KG|%index|degree %degree",

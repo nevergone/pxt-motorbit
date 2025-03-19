@@ -1,36 +1,9 @@
-/*
-modified from pxt-servo/servodriver.ts
-load dependency
-"motorbit": "file:../pxt-motorbit"
-*/
-enum Offset {
-    //% block=one
-    ONE = 0,
-    //% block=two
-    TWO = 1,
-    //% block=three
-    THREE = 2,
-    //% block=four
-    FOUR = 3
-}
-
 //% color="#EE6A50" weight=10 icon="\uf0d1"
 namespace motorbit {
 const PCA9685_ADDRESS = 0x40
 const MODE1 = 0x00
-const MODE2 = 0x01
-const SUBADR1 = 0x02
-const SUBADR2 = 0x03
-const SUBADR3 = 0x04
 const PRESCALE = 0xFE
 const LED0_ON_L = 0x06
-const LED0_ON_H = 0x07
-const LED0_OFF_L = 0x08
-const LED0_OFF_H = 0x09
-const ALL_LED_ON_L = 0xFA
-const ALL_LED_ON_H = 0xFB
-const ALL_LED_OFF_L = 0xFC
-const ALL_LED_OFF_H = 0xFD
 
 const STP_CHA_L = 2047
 const STP_CHA_H = 4095
@@ -67,11 +40,6 @@ export enum Steppers {
     STPM3_4 = 0x1
 }
 
-export enum SonarVersion {
-    V1 = 0x1,
-    V2 = 0x2
-}
-
 export enum Turns {
     //% blockId="T1B4" block="1/4"
     T1B4 = 90,
@@ -90,19 +58,11 @@ export enum Turns {
 }
 
 let initialized = false
-let matBuf = pins.createBuffer(17);
-let distanceBuf = 0;
 
 function i2cwrite(addr: number, reg: number, value: number) {
     let buf = pins.createBuffer(2)
     buf[0] = reg
     buf[1] = value
-    pins.i2cWriteBuffer(addr, buf)
-}
-
-function i2ccmd(addr: number, value: number) {
-    let buf = pins.createBuffer(1)
-    buf[0] = value
     pins.i2cWriteBuffer(addr, buf)
 }
 
@@ -285,7 +245,7 @@ export function EM_GeekServo(index: Servos, degree: number): void {
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
     }
-	
+
 	/**
      * GeekServo5KG
      * @param index Servo Channel; eg: S1
@@ -325,8 +285,8 @@ export function EM_GeekServo(index: Servos, degree: number): void {
         const v_us = ((speed - minInput) / (maxInput - minInput)) * (maxOutput - minOutput) + minOutput;
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
-    }	
-	
+    }
+
 
 //% blockId=motorbit_stepper_degree block="Stepper 28BYJ-48|%index|degree %degree"
 //% group="Stepper Motor" weight=91
