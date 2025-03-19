@@ -146,6 +146,18 @@ namespace motorbit {
         setPwm((index - 1) * 2 + 1, 0, 0);
     }
 
+    /*
+     ======================================
+     ========== PUBLIC FUNCTIONS ==========
+     ======================================
+     */
+
+    //% blockId="get_servo" block="servo %servo"
+    //% servo.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    export function getServo(servo: Servos) {
+        return servo;
+    }
+
     /**
      * Servo Execute
      * @param index Servo Channel; eg: S1
@@ -156,7 +168,8 @@ namespace motorbit {
     //% degree.defl=90
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Servo(index: Servos, degree: number): void {
+    //% index.shadow=get_servo
+    export function Servo(index: number, degree: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -180,7 +193,8 @@ namespace motorbit {
     //% speed.min=1 speed.max=10
     //% inlineInputMode=inline
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Servospeed(index: Servos, degree1: number, degree2: number, speed: number): void {
+    //% index.shadow=get_servo
+    export function Servospeed(index: number, degree1: number, degree2: number, speed: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -212,7 +226,8 @@ namespace motorbit {
     //% blockGap=50
     //% degree.defl=90
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function EM_GeekServo(index: Servos, degree: number): void {
+    //% index.shadow=get_servo
+    export function EM_GeekServo(index: number, degree: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -232,7 +247,8 @@ namespace motorbit {
     //% blockGap=50
     //% degree.min=0 degree.max=360
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function EM_GeekServo2KG(index: Servos, degree: number): void {
+    //% index.shadow=get_servo
+    export function EM_GeekServo2KG(index: number, degree: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -252,7 +268,8 @@ namespace motorbit {
     //% group="GeekServo" weight=94
     //% degree.min=0 degree.max=360
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function EM_GeekServo5KG(index: Servos, degree: number): void {
+    //% index.shadow=get_servo
+    export function EM_GeekServo5KG(index: number, degree: number): void {
         if (!initialized) {
             initPCA9685()
         }
@@ -270,7 +287,8 @@ namespace motorbit {
     //% group="GeekServo" weight=93
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function EM_GeekServo5KG_Motor(index: Servos, speed: number): void { //5KG的电机模式 3000-5000 4000是回中
+    //% index.shadow=get_servo
+    export function EM_GeekServo5KG_Motor(index: number, speed: number): void { //5KG的电机模式 3000-5000 4000是回中
         if (!initialized) {
             initPCA9685()
         }
