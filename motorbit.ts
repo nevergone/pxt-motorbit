@@ -160,8 +160,8 @@ namespace motorbit {
 
     /**
      * Servo Execute
-     * @param index Servo Channel; eg: S1
-     * @param degree [0-180] degree of servo; eg: 0, 90, 180
+     * @param index number Servo Channel; eg: S1
+     * @param degree number [0-180] degree of servo; eg: 0, 90, 180
      */
     //% blockId=motorbit_servo block="Servo|%index|degree|%degree"
     //% group="Servo" weight=100
@@ -182,9 +182,9 @@ namespace motorbit {
     /**
      * Servo Execute
      * @param index Servo Channel; eg: S1
-     * @param degree1 [0-180] degree of servo; eg: 0, 90, 180
-     * @param degree2 [0-180] degree of servo; eg: 0, 90, 180
-     * @param speed [1-10] speed of servo; eg: 1, 10
+     * @param degree1 number [0-180] degree of servo; eg: 0, 90, 180
+     * @param degree2 number [0-180] degree of servo; eg: 0, 90, 180
+     * @param speed number [1-10] speed of servo; eg: 1, 10
      */
     //% blockId=motorbit_servospeed block="Servo|%index|degree start %degree1|end %degree2|speed %speed"
     //% group="Servo" weight=96
@@ -218,8 +218,8 @@ namespace motorbit {
 
     /**
      * Geek Servo
-     * @param index Servo Channel; eg: S1
-     * @param degree [-45-225] degree of servo; eg: -45, 90, 225
+     * @param index number Servo Channel; eg: S1
+     * @param degree number [-45-225] degree of servo; eg: -45, 90, 225
      */
     //% blockId=motorbit_gservo block="Geek Servo|%index|degree %degree=protractorPicker"
     //% group="GeekServo" weight=96
@@ -239,8 +239,8 @@ namespace motorbit {
 
     /**
      * GeekServo2KG
-     * @param index Servo Channel; eg: S1
-     * @param degree [0-360] degree of servo; eg: 0, 180, 360
+     * @param index number Servo Channel; eg: S1
+     * @param degree number [0-360] degree of servo; eg: 0, 180, 360
      */
     //% blockId=motorbit_gservo2kg block="GeekServo2KG|%index|degree %degree"
     //% group="GeekServo" weight=95
@@ -261,8 +261,8 @@ namespace motorbit {
 
     /**
      * GeekServo5KG
-     * @param index Servo Channel; eg: S1
-     * @param degree [0-360] degree of servo; eg: 0, 180, 360
+     * @param index number Servo Channel; eg: S1
+     * @param degree number [0-360] degree of servo; eg: 0, 180, 360
      */
     //% blockId=motorbit_gservo5kg block="GeekServo5KG|%index|degree %degree"
     //% group="GeekServo" weight=94
@@ -347,8 +347,8 @@ namespace motorbit {
 
     /**
      * Stepper Car move forward
-     * @param distance Distance to move in cm; eg: 10, 20
-     * @param diameter diameter of wheel in mm; eg: 48
+     * @param distance number Distance to move in cm; eg: 10, 20
+     * @param diameter number diameter of wheel in mm; eg: 48
      */
     //% blockId=motorbit_stpcar_move block="Car Forward|Distance(cm) %distance|Wheel Diameter(mm) %diameter"
     //% group="Stepper Motor" weight=88
@@ -366,9 +366,9 @@ namespace motorbit {
 
     /**
      * Stepper Car turn by degree
-     * @param turn Degree to turn; eg: 90, 180, 360
-     * @param diameter diameter of wheel in mm; eg: 48
-     * @param track track width of car; eg: 125
+     * @param turn number Degree to turn; eg: 90, 180, 360
+     * @param diameter number diameter of wheel in mm; eg: 48
+     * @param track number track width of car; eg: 125
      */
     //% blockId=motorbit_stpcar_turn block="Car Turn|Degree %turn|Wheel Diameter(mm) %diameter|Track(mm) %track"
     //% weight=87
@@ -434,8 +434,8 @@ namespace motorbit {
     /**
      * Execute single motors with delay
      * @param index Motor Index; eg: A01A02, B01B02, A03A04, B03B04
-     * @param speed [-255-255] speed of motor; eg: 150, -150
-     * @param delay seconde delay to stop; eg: 1
+     * @param speed number [-255-255] speed of motor; eg: 150, -150
+     * @param delay number second delay to stop; eg: 1
      */
     //% blockId=motorbit_motor_rundelay block="Motor|%index|speed %speed|delay %delay|s"
     //% group="Motor" weight=85
@@ -450,9 +450,9 @@ namespace motorbit {
     /**
      * Execute two motors at the same time
      * @param motor1 First Motor; eg: A01A02, B01B02
-     * @param speed1 [-255-255] speed of motor; eg: 150, -150
+     * @param speed1 number [-255-255] speed of motor; eg: 150, -150
      * @param motor2 Second Motor; eg: A03A04, B03B04
-     * @param speed2 [-255-255] speed of motor; eg: 150, -150
+     * @param speed2 number [-255-255] speed of motor; eg: 150, -150
      */
     //% blockId=motorbit_motor_dual block="Motor|%motor1|speed %speed1|%motor2|speed %speed2"
     //% group="Motor" weight=84
@@ -468,9 +468,9 @@ namespace motorbit {
     /**
      * Execute two motors at the same time
      * @param motor1 First Motor; eg: A01A02, B01B02
-     * @param speed1 [-255-255] speed of motor; eg: 150, -150
+     * @param speed1 number [-255-255] speed of motor; eg: 150, -150
      * @param motor2 Second Motor; eg: A03A04, B03B04
-     * @param speed2 [-255-255] speed of motor; eg: 150, -150
+     * @param speed2 number [-255-255] speed of motor; eg: 150, -150
      */
     //% blockId=motorbit_motor_dualDelay block="Motor|%motor1|speed %speed1|%motor2|speed %speed2|delay %delay|s "
     //% group="Motor" weight=83
