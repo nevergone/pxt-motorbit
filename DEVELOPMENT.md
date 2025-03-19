@@ -18,6 +18,7 @@
 * https://makecode.com/extensions/getting-started/sources
 * https://makecode.microbit.org/javascript/types
 * https://makecode.com/defining-blocks
+* https://makecode.com/extensions/localization
 * https://makecode.com/simshim
 * https://makecode.com/extensions/pxt-json
 * https://medium.com/@DCisHurt/micro-bit-desktop-dev-environment-set-up-c70d4a3f35e3
