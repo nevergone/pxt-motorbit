@@ -1,7 +1,6 @@
 {
     "name": "motorbit",
-    "version": "1.0.0",
-    "description": "motorbit emakefun",
+    "description": "motorbit (emakefun)",
     "license": "MIT",
     "dependencies": {
         "core": "*"
