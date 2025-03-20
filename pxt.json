@@ -3,7 +3,8 @@
     "description": "motorbit (emakefun)",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "microphone": "*"
     },
     "files": [
         "README.md",
