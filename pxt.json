@@ -12,6 +12,9 @@
         "_locales/hu/motorbit-strings.json",
         "_locales/zh/motorbit-strings.json"
     ],
+    "testFiles": [
+        "main.ts"
+    ],
     "public": true,
     "supportedTargets": [
         "microbit"
