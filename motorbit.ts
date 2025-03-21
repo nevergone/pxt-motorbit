@@ -17,46 +17,6 @@ namespace motorbit {
     const STP_CHD_L = 3071
     const STP_CHD_H = 1023
 
-    export enum Servos {
-        S1 = 0x01,
-        S2 = 0x02,
-        S3 = 0x03,
-        S4 = 0x04,
-        S5 = 0x05,
-        S6 = 0x06,
-        S7 = 0x07,
-        S8 = 0x08
-    }
-
-    export enum Motors {
-        M1 = 0x1,
-        M2 = 0x2,
-        M3 = 0x3,
-        M4 = 0x4
-    }
-
-    export enum Steppers {
-        STPM1_2 = 0x2,
-        STPM3_4 = 0x1
-    }
-
-    export enum Turns {
-        //% blockId="T1B4" block="1/4"
-        T1B4 = 90,
-        //% blockId="T1B2" block="1/2"
-        T1B2 = 180,
-        //% blockId="T1B0" block="1"
-        T1B0 = 360,
-        //% blockId="T2B0" block="2"
-        T2B0 = 720,
-        //% blockId="T3B0" block="3"
-        T3B0 = 1080,
-        //% blockId="T4B0" block="4"
-        T4B0 = 1440,
-        //% blockId="T5B0" block="5"
-        T5B0 = 1800
-    }
-
     let initialized = false
 
     function i2cwrite(addr: number, reg: number, value: number) {
@@ -147,11 +107,51 @@ namespace motorbit {
     }
 
     /*
-     ======================================
-     ========== PUBLIC FUNCTIONS ==========
-     ======================================
+     ============================
+     ========== PUBLIC ==========
+     ============================
      */
 
+    export enum Servos {
+        S1 = 0x01,
+        S2 = 0x02,
+        S3 = 0x03,
+        S4 = 0x04,
+        S5 = 0x05,
+        S6 = 0x06,
+        S7 = 0x07,
+        S8 = 0x08
+    }
+
+    export enum Motors {
+        M1 = 0x1,
+        M2 = 0x2,
+        M3 = 0x3,
+        M4 = 0x4
+    }
+
+    export enum Steppers {
+        STPM1_2 = 0x2,
+        STPM3_4 = 0x1
+    }
+
+    export enum Turns {
+        //% blockId="T1B4" block="1/4"
+        T1B4 = 90,
+        //% blockId="T1B2" block="1/2"
+        T1B2 = 180,
+        //% blockId="T1B0" block="1"
+        T1B0 = 360,
+        //% blockId="T2B0" block="2"
+        T2B0 = 720,
+        //% blockId="T3B0" block="3"
+        T3B0 = 1080,
+        //% blockId="T4B0" block="4"
+        T4B0 = 1440,
+        //% blockId="T5B0" block="5"
+        T5B0 = 1800
+    }
+    
     //% blockId="get_servo" block="servo %servo"
     //% servo.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     export function getServo(servo: Servos) {
