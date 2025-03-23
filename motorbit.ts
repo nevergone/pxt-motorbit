@@ -151,7 +151,7 @@ namespace motorbit {
         //% blockId="T5B0" block="5"
         T5B0 = 1800
     }
-    
+
     //% blockId="get_servo" block="servo %servo"
     //% servo.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     export function getServo(servo: Servos) {
